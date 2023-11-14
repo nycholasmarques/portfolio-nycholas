@@ -1,0 +1,246 @@
+@use '../variables.scss';
+
+.flx-second_part {
+    background-color: #eff5f0;
+
+    .about {
+        max-width: 1200px;
+        margin: 0 auto;
+
+        #title-section {
+            padding: 30px 0;
+            margin-left: 25px;
+            font-size: 1.7rem;
+            color: variables.$color-bgdark;
+            transform: translateX(-150px);
+            opacity: 0;
+        }
+
+        .flx-about {
+            display: flex;
+            gap: 70px;
+            padding: 10px 10px;
+            margin: 0 10px;
+            overflow: hidden
+        }
+
+        .profile {
+            height: 150px;
+            border-radius: 50%;
+            transform: translateX(-20px);
+            opacity: 0;
+        }
+
+        .about-details {
+            position: relative;
+            display: flex;
+            gap: 20px;
+            background-color: white;
+            box-shadow: 0px 0px 6px 3px rgba(137, 144, 131, 0.367);
+            border-radius: 25px;
+            padding: 30px;
+            transform: translateX(20px);
+            opacity: 0;
+        }
+
+        .about-details::before {
+            content: "";
+            position: absolute;
+            border-style: solid;
+            border-width: 10px;
+            border-color: transparent transparent variables.$color-contrast transparent;
+            left: -20px; /* Ajuste a posição da "cauda" horizontalmente aqui */
+            top: 20%; /* Centraliza a "cauda" verticalmente */
+            transform: translateY(-50%); /* Corrige o deslocamento vertical */
+            transform: rotate(-90deg);
+          }
+
+        .about-text  {
+            width: 50%;
+        }
+
+        #about-btn {
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: none;
+            background-color: variables.$color-contrast;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        #about-btn:hover {
+            opacity: 0.8;
+        }
+
+        .about-skills {
+            position: relative;
+            width: 50%;
+            display: flex;
+            gap: 15px;
+            flex-direction: column;
+        }
+
+        .about-skills progress {
+            appearance: none;
+            -webkit-appearance: none;
+            border-radius: 15px;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        #progress-number {
+            position: absolute;
+            
+            right: 10px;
+            opacity: 0.5;
+        }
+        
+        .about-skills #progress::-webkit-progress-bar {
+            background-color: rgb(221, 238, 205);
+        }
+
+        .about-skills #progress::-webkit-progress-value {
+            background-color: #9B2226;
+        }
+
+        .about-skills #progress2::-webkit-progress-bar {
+            background-color: rgb(221, 238, 205);
+        }
+
+        .about-skills #progress2::-webkit-progress-value {
+            background-color: #EE9B00;
+        }
+
+        .about-skills #progress3::-webkit-progress-bar {
+            background-color: rgb(221, 238, 205);
+        }
+
+        .about-skills #progress3::-webkit-progress-value {
+            background-color: #0A9396;
+        }
+
+        .icons-container {
+            display: flex;
+            padding:  50px 20px 20px 20px;
+            gap: 50px;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .icons-container .icons-container_item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .icons-container .icons-container_item div h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: variables.$color-bgdark;
+        }
+
+        .icons-container .icons-container_item #ic {
+            opacity: 0.7;
+            font-size: 2rem;
+        }
+
+        .icons-container .icons-container_item:nth-child(1) {
+            color: #ee2c00;
+        }
+        .icons-container .icons-container_item:nth-child(2) {
+            color: rgb(11, 195, 26);
+        }
+        .icons-container .icons-container_item:nth-child(3) {
+            color: #96630a;
+        }
+        .icons-container .icons-container_item:nth-child(4) {
+            color: #22429b;
+        }
+        
+        .icons-container .icons-container_item div {
+            color: rgba(0, 0, 0, 0.762);
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .flx-second_part .about #title-section {
+        padding-bottom: 35px;
+    }
+
+    .flx-second_part .about .flx-about {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .flx-second_part .about .profile {
+        height: 200px;
+        width: 200px;
+    }
+
+    .flx-second_part .about .about-details {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .flx-second_part .about {
+        width: 100%;
+    }
+    
+    .flx-second_part .about .about-text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-size: 0.9rem;
+        gap: 5px;
+        width: 100%;
+        text-align: justify;
+        // hyphens: auto;
+    }
+
+    .flx-second_part .about .about-text #about-btn {
+        width: 50%;
+    }
+
+    .flx-second_part .about .about-skills {
+        width: 100%;
+    }
+
+    .flx-second_part .about .icons-container {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        width: 50%;
+        align-items: start;
+        margin: 0 auto;
+    }
+
+    .flx-second_part .about .icons-container div {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .flx-second_part .about .icons-container div h4  {
+        font-size: 1.4rem;
+    }
+
+    .flx-second_part .about .icons-container div p  {
+        font-size: 1.1rem;
+    }
+
+    .flx-second_part .about .about-details::before {
+        top: -20px;
+        left: 47%;
+        transform: rotate(-360deg);
+    }
+}

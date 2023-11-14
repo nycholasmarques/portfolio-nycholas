@@ -1,0 +1,114 @@
+@use '../variables.scss';
+
+.third-part {
+    background-color: #eff5f0;
+    
+    .learning {
+        max-width: 1200px;
+        margin: 0 auto;
+        
+        #title-learning {
+            padding: 50px 0;
+            margin-left: 25px;
+            font-size: 1.7rem;
+            color: variables.$color-bgdark;
+            transform: translateX(-150px);
+            opacity: 0;
+        }
+
+        .timeline {
+            width: 70%;
+            height: auto;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+          }
+          
+          .timeline-content {
+            padding: 20px;
+            background: #eff5f0;
+            -webkit-box-shadow: 0px 0px 10px rgba(137, 144, 131, 0.367);
+            box-shadow: 0px 0px 10px rgba(137, 144, 131, 0.367);
+            border-radius: 5px;
+            color: variables.$color-bgdark;
+            padding: 1.75rem;
+            transition: 0.4s ease;
+            margin: 1rem;
+            opacity: 0;
+            transform: translateX(20px);
+            margin-bottom: 20px;
+            border-radius: 6px;
+          }
+          
+          
+          .timeline-component {
+            margin: 0px 20px 30px 20px;
+          }
+          
+          @media screen and (min-width: 768px) {
+            .timeline {
+              display: grid;
+              grid-template-columns: 1fr 3px 1fr;
+            }
+            
+            .timeline-middle_1 {
+                position: relative;
+                background-color: variables.$color-contrast;
+                width: 3px;
+                height: 100%;             
+            }
+
+            .timeline-circle_1 {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                background-color: variables.$color-contrast;
+                -webkit-transform: translateX(-50%);
+                        transform: translateX(-50%);
+            }
+
+            .timeline-middle_2 {
+                position: relative;
+                background-color: #0d5f16;
+                width: 3px;
+                height: 100%;             
+            }
+
+            .timeline-circle_2 {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                background-image: linear-gradient(180deg, variables.$color-contrast, #0d5f16);
+                -webkit-transform: translateX(-50%);
+                        transform: translateX(-50%);
+            }
+
+            // Para futuros aprendizados:
+
+            .timeline-middle_3 {
+                position: relative;
+                background-color: variables.$color-bgdark;
+                width: 3px;
+                height: 100%;             
+            }
+
+            .timeline-circle_3 {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                background-image: linear-gradient(180deg, #0d5f16, variables.$color-bgdark);
+                -webkit-transform: translateX(-50%);
+                        transform: translateX(-50%);
+            }
+          }
+    }
+}

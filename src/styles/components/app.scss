@@ -1,0 +1,118 @@
+@use '../variables.scss';
+
+.flx-home {
+    height: 93vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    
+
+    #wrapper-home {
+        position: relative;
+        text-align: center;
+        backdrop-filter: blur(25px);
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    #wrapper-home img {
+        
+        height: 300px;
+       border-radius: 50%;
+    }
+
+    #wrapper-home h2 {
+        font-size: 2em;
+        color: white;
+        margin-bottom: 5px;
+    }
+
+    #wrapper-home h2 span {
+        color: variables.$color-contrast;
+    }
+
+    #wrapper-home p {
+        color: variables.$color-contrast;
+        font-weight: 600;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .rs-links {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        cursor: pointer;
+        font-size: 1.3rem;
+
+        a {
+            color: white;
+            transition: 0.5s;
+        }
+
+        a:hover {
+            color: variables.$color-contrast;
+        }
+    }
+
+}
+
+#scroll-down {
+    position: absolute;
+    bottom: 30px;
+    color: white;
+    text-align: center;
+    font-weight: 400;
+}
+
+#scroll-down p {
+    margin-bottom: 10px;
+}
+
+.scroll-icon {
+    cursor: pointer;
+    font-size: 1.3rem;
+    color: white;
+    animation: moveUpDown 2s ease-in-out infinite;
+}
+
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+// responsivo 
+
+@media screen and (max-width: 768px) {
+    .flx-home #wrapper-home img {
+       height: 250px;
+       border-radius: 50%;
+    }
+}
+
+
+
+// footer
+
+footer {
+    background-color: rgba(25, 125, 70, 0.57);
+    color: white;
+    text-align: center;
+    border-top: 1px solid variables.$color-contrast;
+    padding: 20px;
+    font-size: 1.1rem;
+}
+
+footer a {
+    color: white;
+    font-weight: 600;
+    text-decoration: underline;
+}
