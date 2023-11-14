@@ -14,7 +14,7 @@ const projects = [
     image: 'https://raw.githubusercontent.com/nycholasmarques/portfolio-nycholas/main/src/img/project-img/animedbs.png',
     year: '2023',
     status: 'Concluído',
-    description: 'Aplicação criada com ReactJs, uma blibioteca de animes onde tem algumas funcionalidades como busca, paginas de descrição dinâmicas e pretendo lançar futuramente, algumas melhorias como um sistema de filtragem por categorias, este sendo meu primeiro projeto com react.',
+    description: 'Aplicação criada com ReactJs, uma biblioteca de animes onde tem algumas funcionalidades como busca, paginas de descrição dinâmicas e pretendo lançar futuramente, algumas melhorias como um sistema de filtragem por categorias, este sendo meu primeiro projeto com React JS.',
     site: 'https://animedatabase-murex.vercel.app/',
     github: 'https://github.com/nycholasmarques/animedatabase'
   }
