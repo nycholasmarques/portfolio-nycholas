@@ -32,7 +32,7 @@ function Navbar() {
           <li><HashLink smooth to='/#section-about'>Sobre</HashLink></li>
             <li><HashLink smooth to='/#section-learning'>Estudos</HashLink></li>
             <li><HashLink smooth to='/#section-works'>Porfolio</HashLink></li>
-            <li><a href="https://www.linkedin.com/in/nycholas-marques-680411245/" id='btn-ctt'>Contact</a></li>
+            <li><a href="https://www.linkedin.com/in/nycholas-marques-680411245/" id='btn-ctt'>Contato</a></li>
           </ul>
           
         </div>

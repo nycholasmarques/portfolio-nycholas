@@ -1,6 +1,6 @@
 import '../styles/components/about.scss'
 import { GiBurningBook } from 'react-icons/gi'
-import { BsCodeSquare, BsCupHot, BsClockHistory } from 'react-icons/bs'
+import { BsCodeSquare, BsClockHistory } from 'react-icons/bs'
 import { useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -137,15 +137,15 @@ function About () {
                     </div>
                     <div className="about-skills">
 
-                        <h4>HTML + CSS <span id="progress-number">85%</span>
+                        <h4>HTML + Tailwind<span id="progress-number">85%</span>
                         </h4>
                         <progress value='85' max='100' id='progress'></progress>
 
-                        <h4>JAVASCRIPT <span id="progress-number">60%</span></h4>
-                        <progress value='60' max='100' id='progress2'></progress>
+                        <h4>PHP <span id="progress-number">80%</span></h4>
+                        <progress value='80' max='100' id='progress2'></progress>
 
-                        <h4>REACT <span id="progress-number">35%</span></h4>
-                        <progress value='40' max='100' id='progress3'></progress>
+                        <h4>LARAVEL <span id="progress-number">70%</span></h4>
+                        <progress value='70' max='100' id='progress3'></progress>
                     </div>
                 </div>
             </div>
@@ -153,8 +153,8 @@ function About () {
               <div className='icons-container_item' id='item-1'>
                  <GiBurningBook id='ic' />
                   <div>
-                    <h4>1</h4>
-                    <p>Projetos completados</p>
+                    <h4>2</h4>
+                    <p>Projetos completos</p>
                   </div>
               </div>
               <div className='icons-container_item' id='item-2'>
@@ -162,13 +162,6 @@ function About () {
                   <div>
                     <h4>3</h4>
                     <p>codepein resolvidos</p>
-                  </div>
-              </div>
-              <div className='icons-container_item' id='item-3'>
-                 <BsCupHot id='ic' />
-                  <div>
-                    <h4>79</h4>
-                    <p>Xícaras de café</p>
                   </div>
               </div>
               <div className='icons-container_item' id='item-4'>
