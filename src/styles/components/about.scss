@@ -56,10 +56,16 @@
           }
 
         .about-text  {
-            width: 50%;
+            width: 100%;
         }
 
-        #about-btn {
+        .about-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #btn {
             padding: 8px 16px;
             border-radius: 20px;
             border: none;
@@ -68,65 +74,20 @@
             color: white;
             cursor: pointer;
             margin-top: 20px;
+            transition: 0.3s;
         }
 
-        #about-btn:hover {
-            opacity: 0.8;
-        }
-
-        .about-skills {
-            position: relative;
-            width: 50%;
-            display: flex;
-            gap: 15px;
-            flex-direction: column;
-        }
-
-        .about-skills progress {
-            appearance: none;
-            -webkit-appearance: none;
-            border-radius: 15px;
-            overflow: hidden;
-            width: 100%;
-        }
-
-        #progress-number {
-            position: absolute;
-            
-            right: 10px;
-            opacity: 0.5;
-        }
-        
-        .about-skills #progress::-webkit-progress-bar {
-            background-color: rgb(221, 238, 205);
-        }
-
-        .about-skills #progress::-webkit-progress-value {
-            background-color: #9B2226;
-        }
-
-        .about-skills #progress2::-webkit-progress-bar {
-            background-color: rgb(221, 238, 205);
-        }
-
-        .about-skills #progress2::-webkit-progress-value {
-            background-color: #EE9B00;
-        }
-
-        .about-skills #progress3::-webkit-progress-bar {
-            background-color: rgb(221, 238, 205);
-        }
-
-        .about-skills #progress3::-webkit-progress-value {
-            background-color: #0A9396;
+        #btn:hover {
+            background-color: #2fca08;
+            scale: 1.1;
         }
 
         .icons-container {
             display: flex;
-            padding:  50px 20px 20px 20px;
-            gap: 50px;
-            justify-content: center;
+            padding:  20px 20px;
+            gap: 20px;
             align-items: center;
+            justify-content: center;
             width: 100%;
         }
 
@@ -134,7 +95,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 25px;
+            gap: 10px;
         }
 
         .icons-container .icons-container_item div h4 {
@@ -152,13 +113,19 @@
             color: #ee2c00;
         }
         .icons-container .icons-container_item:nth-child(2) {
-            color: rgb(11, 195, 26);
+            color: rgb(13, 57, 87);
         }
         .icons-container .icons-container_item:nth-child(3) {
-            color: #96630a;
+            color: #22429b;
         }
         .icons-container .icons-container_item:nth-child(4) {
-            color: #22429b;
+            color: #1a66bd;
+        }
+        .icons-container .icons-container_item:nth-child(5) {
+            color: #a4ad1b;
+        }
+        .icons-container .icons-container_item:nth-child(6) {
+            color: #129ddd;
         }
         
         .icons-container .icons-container_item div {
@@ -210,28 +177,10 @@
         width: 50%;
     }
 
-    .flx-second_part .about .about-skills {
-        width: 100%;
-    }
-
     .flx-second_part .about .icons-container {
         display: flex;
-        flex-direction: column;
-        gap: 30px;
-        width: 50%;
-        align-items: start;
-        margin: 0 auto;
-    }
-
-    .flx-second_part .about .icons-container div {
-        display: flex;
-        gap: 15px;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .flx-second_part .about .icons-container div h4  {
-        font-size: 1.4rem;
+        flex-wrap: wrap;
+        gap: 20px;
     }
 
     .flx-second_part .about .icons-container div p  {
