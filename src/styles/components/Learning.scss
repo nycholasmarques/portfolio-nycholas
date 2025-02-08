@@ -38,9 +38,13 @@
             transform: translateX(20px);
             margin-bottom: 20px;
             border-radius: 6px;
+
+            a {
+                text-decoration: underline;
+                color: variables.$color-contrast;
+            }
           }
-          
-          
+
           .timeline-component {
             margin: 0px 20px 30px 20px;
           }
@@ -72,7 +76,7 @@
 
             .timeline-middle_2 {
                 position: relative;
-                background-color: #0d5f16;
+                background-color: #1ca12c;
                 width: 3px;
                 height: 100%;             
             }
@@ -89,11 +93,9 @@
                         transform: translateX(-50%);
             }
 
-            // Para futuros aprendizados:
-
             .timeline-middle_3 {
                 position: relative;
-                background-color: variables.$color-bgdark;
+                background-color: #227b2d;
                 width: 3px;
                 height: 100%;             
             }
@@ -105,7 +107,7 @@
                 width: 15px;
                 height: 15px;
                 border-radius: 50%;
-                background-image: linear-gradient(180deg, #0d5f16, variables.$color-bgdark);
+                background-image: linear-gradient(180deg, #1aa029, variables.$color-bgdark);
                 -webkit-transform: translateX(-50%);
                         transform: translateX(-50%);
             }

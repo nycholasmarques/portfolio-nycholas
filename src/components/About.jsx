@@ -1,8 +1,6 @@
 import '../styles/components/about.scss';
-import { GiBurningBook } from 'react-icons/gi';
-import { BsCodeSquare, BsClockHistory } from 'react-icons/bs';
-import { SiTailwindcss, SiTypescript, SiMysql, SiReact, SiPhp } from "react-icons/si";
-import { FaLaravel } from "react-icons/fa";
+import { SiTailwindcss, SiTypescript, SiGo, SiPostgresql } from "react-icons/si";
+import { FaNodeJs, FaReact } from "react-icons/fa";
 import { useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -72,9 +70,6 @@ function About() {
     }
   }, [])
 
-  function loadingCv() {
-    window.alert('Não há curriculo no momento!')
-  }
 
 
   return (
@@ -85,49 +80,46 @@ function About() {
           <img src="https://avatars.githubusercontent.com/u/110244475?v=4" alt="Nycholas" className='profile' />
           <div className="about-details">
             <div className='about-text'>
-              <p>Há varios anos apaixonado por tecnologia, entrei para a área de desenvolvimento web. Atualmente estou cursando ADS, e me especializando na área, não só para o âmbito profissional como para o pessoal. Buscando sempre ter e proporcionar boas experiências nos meus serviços.</p>
+              <p>Apaixonado por tecnologia, ingressei na área de desenvolvimento em 2023. Atualmente, curso Análise e Desenvolvimento de Sistemas (ADS) e atuo como estagiário em Backend, aprimorando minhas habilidades tanto para o crescimento profissional quanto pessoal. Estou sempre em busca de oferecer e proporcionar as melhores experiências em meus projetos e serviços.</p>
               <div>
                 <div className='icons-container'>
-                  <div className='icons-container_item' id='item-1'>
-                    <SiTailwindcss />
+                <div className='icons-container_item' id='item-1'>
+                    <SiGo />
                     <div>
-                      <p>Laravel</p>
+                      <p>Golang</p>
                     </div>
                   </div>
                   <div className='icons-container_item' id='item-2'>
-                    <SiPhp />
-                    <div>
-                      <p>PHP</p>
-                    </div>
-                  </div>
-                  <div className='icons-container_item' id='item-3'>
                     <SiTailwindcss />
                     <div>
                       <p>Tailwind</p>
                     </div>
                   </div>
-                  <div className='icons-container_item' id='item-4'>
+                  <div className='icons-container_item' id='item-3'>
                     <SiTypescript />
                     <div>
                       <p>Typescript</p>
                     </div>
                   </div>
-                  <div className='icons-container_item' id='item-5'>
-                    <SiMysql />
+                  <div className='icons-container_item' id='item-4'>
+                    <SiPostgresql />
                     <div>
-                      <p>Mysql</p>
+                      <p>PostgreSQL</p>
+                    </div>
+                  </div>
+                  <div className='icons-container_item' id='item-5'>
+                    <FaNodeJs />
+                    <div>
+                      <p>Nodejs</p>
                     </div>
                   </div>
                   <div className='icons-container_item' id='item-6'>
-                    <SiReact />
+                    <FaReact />
                     <div>
                       <p>React</p>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className='about-btn'>
-                <button id='btn' onClick={loadingCv}>Download CV</button>
               </div>
             </div>
           </div>

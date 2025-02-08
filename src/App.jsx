@@ -12,6 +12,7 @@ import Learning from './components/Learning'
 
 function App() {
 
+  const actualYear = new Date().getFullYear();
 
   return (
     <div id="portfolio">
@@ -40,7 +41,7 @@ function App() {
       <Learning />
       <Works />
       <footer>
-      2023 © Desenvolvido por <a href="https://github.com/nycholasmarques" target='_blank' rel='noreferrer'>Nycholas Marques</a>
+      {actualYear} © Desenvolvido por <a href="https://github.com/nycholasmarques" target='_blank' rel='noreferrer'>Nycholas Marques</a>
       </footer>
     </div>
   )

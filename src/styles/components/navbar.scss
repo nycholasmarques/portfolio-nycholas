@@ -44,8 +44,8 @@
     }
 
     .nav-list li a:not(#btn-ctt):hover {
-        color: #EE9B00;
-        border-bottom: 1px solid #EE9B00;
+        color: green;
+        border-bottom: 1px solid variables.$color-contrast;
     }
 
     .nav-list li #btn-ctt {
@@ -53,7 +53,7 @@
         border-radius: 20px;
         border: none;
         background-color: variables.$color-contrast;
-        font-weight: 600;
+        font-weight: 400;
         color: white;
         cursor: pointer;
         margin-top: 20px;
