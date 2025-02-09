@@ -127,6 +127,27 @@
                     justify-content: center;
                     gap: 30%;
 
+                    button {
+                        color: variables.$color-bgdark;
+                        appearance: none;
+                        background-color: #23d573;
+                        border: 2px solid #74C69D;
+                        border-radius: 15px;
+                        box-sizing: border-box;
+                        color: #FFFFFF;
+                        display: inline-block;
+                        font-weight: 600;
+                        padding: 10px 22px;
+                        transition: all 300ms cubic-bezier(.23, 1, 0.32, 1); 
+                        cursor: pointer;    
+                    }
+
+                    
+                    button:hover {
+                        box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+                        transform: translateY(-2px);
+                    }    
+
                     a {
                         color: variables.$color-bgdark;
                         appearance: none;
