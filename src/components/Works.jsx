@@ -1,9 +1,10 @@
 import { useState, useLayoutEffect } from "react";
 import "../styles/components/works.scss";
 import "animate.css";
-import { FaReact, FaSass } from "react-icons/fa";
+import { FaNodeJs, FaReact, FaSass } from "react-icons/fa";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SiPostgresql, SiSteam, SiTailwindcss } from "react-icons/si";
 
 const projects = [
   {
@@ -16,6 +17,16 @@ const projects = [
     status: "Concluído",
     description:
       "Aplicação criada com ReactJs, uma biblioteca de animes onde tem algumas funcionalidades como busca, paginas de descrição dinâmicas. Este é meu primeiro projeto com React JS.",
+      stacks: [
+        {
+          name: "ReactJs",
+          icon: <FaReact id="react-icon"/>,
+        },
+        {
+          name: "Sass",
+          icon: <FaSass id="sass-icon"/>,
+        }
+      ],
     site: "https://animedatabase-murex.vercel.app/",
     github: "https://github.com/nycholasmarques/animedatabase",
   },
@@ -24,11 +35,29 @@ const projects = [
     title: "NycBlog",
     category: "Websites",
     image:
-      "https://raw.githubusercontent.com/nycholasmarques/portfolio-nycholas/main/src/img/project-img/nycblog.png",
+      "https://github.com/nycholasmarques/portfolio-nycholas/blob/main/src/img/project-img/nycblog.png?raw=true",
     year: "2024",
     status: "Concluído",
     description:
-      "Aplicação criada com ReactJs, uma biblioteca de animes onde tem algumas funcionalidades como busca, paginas de descrição dinâmicas. Este é meu primeiro projeto com React JS.",
+      "Aplicação criada com ReactJs e Nodejs, esse projeto tem como objetivo ser um blog com funções de login, cadastro, criar postagens, comentários, curtidas, também tem uma area de admin onde tem funções de adicionar e excluir postagens.",
+      stacks: [
+        {
+          name: "ReactJs",
+          icon: <FaReact id="react-icon"/>,
+        },
+        {
+          name: "Nodejs",
+          icon: <FaNodeJs id="node-icon"/>,
+        },
+        {
+          name: "Tailwind",
+          icon: <SiTailwindcss id="tailwind-icon"/>,
+        },
+        {
+          name: "PostgreSQL",
+          icon: <SiPostgresql id="postgres-icon"/>,
+        }
+      ],
     site: "",
     github: "https://github.com/nycholasmarques/nycblog",
   },
@@ -89,7 +118,7 @@ function Works() {
   });
 
   const noWorkPublished = () => {
-    window.alert("Projeto não publicado ainda");
+    window.alert("Projeto não publicado ainda.");
   }
 
   return (
@@ -113,22 +142,19 @@ function Works() {
               <div key={project.id} className="project-item">
                 <div className="project-info">
                   <figure className="animate-image">
-                    <img src={project.image} alt={project.title} />
+                    <img src={project.image} alt={project.title} width={"500px"}/>
                   </figure>
-
                   <div className="project-detail">
                     <div className="first-line">
                       <h3 className="project-detail_title">{project.title}</h3>
-                      {/* <ul className="project-detail_stts">
-                              <li id="st-pr">{project.year}</li>
-                          </ul> */}
                     </div>
                     <p className="project-detail_description">
                       {project.description}
                     </p>
                     <div className="project-detail_technologies">
-                      <FaReact />
-                      <FaSass />
+                      {project.stacks.map((stack) => (
+                        <span key={stack.name}>{stack.icon}</span>
+                      ))}
                     </div>
                     <div className="project-detail_links">
                       <p>
@@ -164,7 +190,6 @@ function Works() {
                           </a>
                         </p>
                       )}
-                      {/* <p><a href={project.site} target='_blank' rel='noreferrer'>SITE</a></p> */}
                     </div>
                   </div>
                   <hr />
