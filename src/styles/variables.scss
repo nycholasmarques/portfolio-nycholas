@@ -1,14 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
 $font-stack: 'Poppins', sans-serif;
+$font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+$font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+$font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
 $color-contrast: rgb(27, 177, 19);
 $color-bgdark: #001219;
 
-@keyframes xxx {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
+$bp-md: 768px;
+$bp-lg: 1024px;

@@ -1,41 +1,65 @@
 import '../styles/components/navbar.scss'
 import { useState } from 'react'
-import { FaBars } from 'react-icons/fa'
-import { HashLink } from 'react-router-hash-link';
+import { FiMenu, FiX } from 'react-icons/fi'
+import { HashLink } from 'react-router-hash-link'
+
+const links = [
+  { to: '/#section-about', label: 'Sobre' },
+  { to: '/#section-learning', label: 'Estudos' },
+  { to: '/#section-works', label: 'Portfolio' },
+]
+
+const LINKEDIN = 'https://www.linkedin.com/in/nycholas-marques-680411245/'
 
 function Navbar() {
+  const [isOpen, setIsOpen] = useState(false)
 
-
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const closeMenu = () => setIsOpen(false)
 
   return (
-    <nav className='navbar'>
-        <HashLink smooth to='#portfolio'>
-          <h1 data-last-letter="."><span>N</span>YCHOLAS</h1>
+    <nav className={`navbar ${isOpen ? 'navbar--open' : ''}`}>
+      <div className="container navbar-inner">
+        <HashLink smooth to="/#portfolio" className="navbar-logo" onClick={closeMenu}>
+          <span>N</span>YCHOLAS<span>.</span>
         </HashLink>
+
         <ul className="nav-list">
-            <li><HashLink smooth to='/#section-about'>Sobre</HashLink></li>
-            <li><HashLink smooth to='/#section-learning'>Estudos</HashLink></li>
-            <li><HashLink smooth to='/#section-works'>Portfolio</HashLink></li>
-            <li><a target='_blank' rel='noreferrer' href="https://www.linkedin.com/in/nycholas-marques-680411245/" id='btn-ctt'>Contato</a></li>
+          {links.map((link) => (
+            <li key={link.to}>
+              <HashLink smooth to={link.to}>{link.label}</HashLink>
+            </li>
+          ))}
+          <li>
+            <a target="_blank" rel="noreferrer" href={LINKEDIN} className="btn btn--primary btn-ctt">
+              Contato
+            </a>
+          </li>
         </ul>
 
-        <div className="navbar-responsive">
-          <div onClick={toggleMenu}>
-            <FaBars className='hambur'/>
-          </div>
-          <ul className={`dropdown_menu ${isOpen ? 'open' : ''}`}>
-          <li><HashLink smooth to='/#section-about'>Sobre</HashLink></li>
-            <li><HashLink smooth to='/#section-learning'>Estudos</HashLink></li>
-            <li><HashLink smooth to='/#section-works'>Porfolio</HashLink></li>
-            <li><a href="https://www.linkedin.com/in/nycholas-marques-680411245/" id='btn-ctt'>Contato</a></li>
-          </ul>
-          
-        </div>
+        <button
+          type="button"
+          className="hambur"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'}
+          aria-expanded={isOpen}
+          aria-controls="mobile-menu"
+        >
+          {isOpen ? <FiX /> : <FiMenu />}
+        </button>
+      </div>
+
+      <ul id="mobile-menu" className={`dropdown_menu ${isOpen ? 'open' : ''}`}>
+        {links.map((link) => (
+          <li key={link.to}>
+            <HashLink smooth to={link.to} onClick={closeMenu}>{link.label}</HashLink>
+          </li>
+        ))}
+        <li>
+          <a target="_blank" rel="noreferrer" href={LINKEDIN} className="btn btn--primary" onClick={closeMenu}>
+            Contato
+          </a>
+        </li>
+      </ul>
     </nav>
   )
 }

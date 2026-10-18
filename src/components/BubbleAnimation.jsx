@@ -1,24 +1,39 @@
+import { useMemo } from 'react'
 import '../styles/components/bubbles.scss'
 
+const NUMBER_OF_BUBBLES = 22
 
 const BubbleAnimation = () => {
-    const numberOfBubbles = 50; 
-    const bubbles = Array.from({ length: numberOfBubbles }, (_, index) => index);
-    
-    return (
-      <div className="bubbles">
-        {bubbles.map((index) => {
-          const animationDuration = 10 + Math.random() * 15; // Gere durações aleatórias entre 5s e 30s
-          const animationDelay = 0 + Math.random() * 20; // Gere atrasos aleatórios entre 0s e 20s
-          
-          return (
-            <span key={index} className="bubble" style={{
-              animationDuration: `${animationDuration}s`,
-              animationDelay: `${animationDelay}s`,
-            }}></span>
-          );
-        })}
-      </div>
-    );
-  };
+  // Valores aleatórios gerados uma vez só, para não "pular" a cada render
+  const bubbles = useMemo(
+    () =>
+      Array.from({ length: NUMBER_OF_BUBBLES }, (_, index) => ({
+        id: index,
+        left: Math.random() * 100,
+        size: 4 + Math.random() * 10,
+        duration: 14 + Math.random() * 18,
+        delay: -Math.random() * 30,
+      })),
+    []
+  )
+
+  return (
+    <div className="bubbles" aria-hidden="true">
+      {bubbles.map((b) => (
+        <span
+          key={b.id}
+          className="bubble"
+          style={{
+            left: `${b.left}%`,
+            width: `${b.size}px`,
+            height: `${b.size}px`,
+            animationDuration: `${b.duration}s`,
+            animationDelay: `${b.delay}s`,
+          }}
+        />
+      ))}
+    </div>
+  )
+}
+
 export default BubbleAnimation

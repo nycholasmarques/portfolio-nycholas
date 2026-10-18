@@ -1,9 +1,27 @@
 @use 'variables';
 
+:root {
+    --bg: #{variables.$color-bgdark};
+    --surface: rgba(255, 255, 255, 0.03);
+    --surface-hover: rgba(255, 255, 255, 0.06);
+    --border: rgba(148, 210, 189, 0.12);
+    --border-strong: rgba(148, 210, 189, 0.24);
+    --text: #e6f1ee;
+    --text-muted: #8fa9a2;
+    --accent: #3ddc4f;
+    --accent-soft: rgba(61, 220, 79, 0.12);
+    --on-accent: #{variables.$color-bgdark};
+    --teal: #94d2bd;
+    --radius: 16px;
+    --radius-sm: 10px;
+    --container: 1120px;
+    --nav-h: 72px;
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 * {
     padding: 0;
     margin: 0;
-    font-family: variables.$font-stack;
     box-sizing: border-box;
 }
 
@@ -12,6 +30,7 @@ html {
 }
 
 body {
+    font-family: variables.$font-stack;
     background-color: variables.$color-bgdark;
     overflow-x: hidden;
 }
@@ -20,3 +39,123 @@ a {
     text-decoration: none;
 }
 
+button {
+    font: inherit;
+}
+
+::selection {
+    background: var(--accent);
+    color: var(--bg);
+}
+
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+}
+
+// ---------- tipografia nova (hero e navbar) ----------
+
+.hero,
+.navbar,
+.footer {
+    font-family: variables.$font-body;
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+
+    h1, h2, h3 {
+        font-family: variables.$font-display;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+// ---------- botões ----------
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: transform 0.25s var(--ease), background-color 0.25s, border-color 0.25s, box-shadow 0.25s;
+
+    svg {
+        transition: transform 0.25s var(--ease);
+    }
+
+    &:hover {
+        transform: translateY(-2px);
+    }
+
+    &:hover svg {
+        transform: translateX(2px);
+    }
+}
+
+.btn--primary {
+    background: var(--accent);
+    color: var(--on-accent);
+    box-shadow: 0 8px 30px -10px rgba(61, 220, 79, 0.6);
+
+    &:hover {
+        box-shadow: 0 12px 36px -10px rgba(61, 220, 79, 0.8);
+    }
+}
+
+.btn--ghost {
+    border-color: var(--border-strong);
+    color: var(--text);
+    background: var(--surface);
+
+    &:hover {
+        border-color: var(--accent);
+        background: var(--surface-hover);
+    }
+}
+
+// ---------- animação de entrada ----------
+// Só esconde se o JS rodou (classe adicionada pelo useReveal)
+
+.js-reveal [data-reveal] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+    transition-delay: var(--reveal-delay, 0s);
+}
+
+.js-reveal [data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .js-reveal [data-reveal] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}

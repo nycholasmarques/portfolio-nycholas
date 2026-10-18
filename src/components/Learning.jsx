@@ -1,86 +1,79 @@
-import "../styles/components/Learning.scss";
-import { useLayoutEffect } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { BsYoutube } from "react-icons/bs";
+import '../styles/components/Learning.scss'
+import { useLayoutEffect } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+// Para adicionar um novo marco, basta incluir um item aqui:
+// os lados se alternam sozinhos.
+const timeline = [
+  {
+    date: 'SET 2023',
+    title: 'Faculdade de ADS',
+    description: 'Início da faculdade de Análise e Desenvolvimento de Sistemas na Uninter.',
+  },
+  {
+    date: 'SET 2024',
+    title: 'Canal no YouTube',
+    description: (
+      <>
+        Início do canal{' '}
+        <a href="https://www.youtube.com/@DevNych" target="_blank" rel="noreferrer">DevNych</a>.
+      </>
+    ),
+  },
+  {
+    date: 'JAN 2025',
+    title: 'Estágio',
+    description: 'Início do estágio em programação, atuando no backend.',
+  },
+]
 
 function Learning() {
   useLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.to("#title-learning", {
+    gsap.registerPlugin(ScrollTrigger)
+    gsap.to('#title-learning', {
       x: 0,
       opacity: 1,
       scrollTrigger: {
-        trigger: "#title-learning",
-        //markers: true,
-        start: "top 800px",
-        end: "bottom 700px",
+        trigger: '#title-learning',
+        start: 'top 800px',
+        end: 'bottom 700px',
         scrub: true,
       },
-    });
+    })
 
     return () => {
-      gsap.killTweensOf("#title-section");
-    };
-  }, []);
-
-  useLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    gsap.to(".timeline-component", {
-      x: 0,
-      opacity: 1,
-      scrollTrigger: {
-        trigger: ".timeline-component",
-        start: "top 800px",
-        end: "bottom 700px",
-        scrub: true,
-      },
-    });
-
-    return () => {
-      gsap.killTweensOf(".timeline-component");
-    };
-  }, []);
+      gsap.killTweensOf('#title-learning')
+    }
+  }, [])
 
   return (
     <section className="third-part">
       <section className="learning" id="section-learning">
         <h2 id="title-learning">Estudos e experiências</h2>
-        <div className="timeline">
-          <div className="timeline-empty"></div>
-          <div className="timeline-middle_1">
-            <div className="timeline-circle_1"></div>
-          </div>
-          <div className="timeline-component timeline-content">
-            <h3>SET-2023 - ADS</h3>
-            <p>Inicio da faculdade de ads na Uninter</p>
-          </div>
-          <div className="timeline-component timeline-content">
-            <h3>SET-2024 - Youtube</h3>
-            <p>
-              Inicio do canal{" "}
-              <a href="https://www.youtube.com/@DevNych">DevNych</a>
-            </p>
-          </div>
-          <div className="timeline-middle_2">
-            <div className="timeline-circle_2"></div>
-          </div>
-          <div className="timeline-empty"></div>
 
-          <div className="timeline-empty"></div>
-
-          <div className="timeline-middle_3">
-            <div className="timeline-circle_3"></div>
-          </div>
-          <div className=" timeline-component timeline-content">
-            <h3>JAN-2025 - Estágio</h3>
-            <p>Inicio do estágio em programação</p>
-          </div>
-        </div>
+        <ol className="timeline">
+          {timeline.map((item, index) => (
+            <li
+              key={item.date}
+              className={`timeline-item ${index % 2 === 0 ? 'timeline-item--right' : 'timeline-item--left'}`}
+              data-reveal
+            >
+              <time className="timeline-date">{item.date}</time>
+              <div className="timeline-marker" aria-hidden="true">
+                <span className="timeline-dot" />
+              </div>
+              <div className="timeline-content">
+                <span className="timeline-step">{String(index + 1).padStart(2, '0')}</span>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
       </section>
     </section>
-  );
+  )
 }
 
-export default Learning;
+export default Learning
