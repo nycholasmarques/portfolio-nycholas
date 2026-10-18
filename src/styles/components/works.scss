@@ -88,8 +88,37 @@
             .first-line {
                 width: 100%;
                 display: flex;
-                justify-content: space-around;
+                flex-direction: column;
+                justify-content: center;
                 align-items: center;
+                gap: 10px;
+
+                .project-badge {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 8px;
+                    padding: 4px 14px;
+                    border-radius: 999px;
+                    background: rgba(0, 18, 25, 0.06);
+                    color: #4b625b;
+                    font-size: 0.8rem;
+                    font-weight: 500;
+                }
+
+                // projeto no ar: selo verde com um ponto "ao vivo"
+                .project-badge--live {
+                    background: rgba(27, 177, 19, 0.12);
+                    color: #13940d;
+
+                    &::before {
+                        content: '';
+                        width: 7px;
+                        height: 7px;
+                        border-radius: 50%;
+                        background: variables.$color-contrast;
+                        box-shadow: 0 0 0 3px rgba(27, 177, 19, 0.2);
+                    }
+                }
               
 
                 .project-detail_title {
@@ -132,6 +161,18 @@
 
             #postgres-icon {
                 color: #336791;
+            }
+
+            #js-icon {
+                color: #e8c400;
+            }
+
+            #python-icon {
+                color: #3776AB;
+            }
+
+            #docker-icon {
+                color: #2496ED;
             }
 
             .project-detail {

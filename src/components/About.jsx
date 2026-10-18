@@ -1,14 +1,29 @@
 import '../styles/components/about.scss';
-import { SiTailwindcss, SiTypescript, SiGo, SiPostgresql } from "react-icons/si";
-import { FaNodeJs, FaReact } from "react-icons/fa";
-import { useLayoutEffect, useRef } from 'react';
+import {
+  SiGo, SiLinux, SiKubernetes, SiHelm, SiDocker, SiArgo, SiIstio,
+  SiTerraform, SiVault, SiGooglecloud, SiAkamai, SiDatadog, SiPostgresql,
+} from "react-icons/si";
+import { useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-function About() {
+const stacks = [
+  { name: 'Go', icon: <SiGo />, color: '#00ADD8' },
+  { name: 'Linux', icon: <SiLinux />, color: '#D9A400' },
+  { name: 'Kubernetes', icon: <SiKubernetes />, color: '#326CE5' },
+  { name: 'Helm', icon: <SiHelm />, color: '#0F1689' },
+  { name: 'Docker', icon: <SiDocker />, color: '#2496ED' },
+  { name: 'ArgoCD', icon: <SiArgo />, color: '#EF7B4D' },
+  { name: 'Istio', icon: <SiIstio />, color: '#466BB0' },
+  { name: 'Terraform', icon: <SiTerraform />, color: '#7B42BC' },
+  { name: 'Vault', icon: <SiVault />, color: '#000000' },
+  { name: 'GCP', icon: <SiGooglecloud />, color: '#4285F4' },
+  { name: 'Akamai', icon: <SiAkamai />, color: '#0096D6' },
+  { name: 'Datadog', icon: <SiDatadog />, color: '#632CA6' },
+  { name: 'PostgreSQL', icon: <SiPostgresql />, color: '#4169E1' },
+]
 
-  const el = useRef()
-  const tl = useRef()
+function About() {
 
   useLayoutEffect(() => {
 
@@ -80,45 +95,17 @@ function About() {
           <img src="https://avatars.githubusercontent.com/u/110244475?v=4" alt="Nycholas" className='profile' />
           <div className="about-details">
             <div className='about-text'>
-              <p>Apaixonado por tecnologia, ingressei na área de desenvolvimento em 2023. Atualmente, curso Análise e Desenvolvimento de Sistemas (ADS) e atuo como estagiário em Backend, aprimorando minhas habilidades tanto para o crescimento profissional quanto pessoal. Estou sempre em busca de oferecer e proporcionar as melhores experiências em meus projetos e serviços.</p>
+              <p>Comecei minha trajetória longe do código, passando por atendimento, suporte e rotinas operacionais, experiências que me ensinaram muito sobre comunicação, organização e, principalmente, sobre entender problemas reais de pessoas. Em 2023 encontrei na tecnologia o meu caminho e hoje, formado em Análise e Desenvolvimento de Sistemas, atuo como Engenheiro de Plataforma / SRE no Grupo SBF, trabalhando com automação, confiabilidade, GitOps, observabilidade e ferramentas internas que apoiam os times de engenharia no dia a dia. Também me interesso por IA aplicada ao desenvolvimento e sigo aprendendo na prática, buscando construir soluções úteis, confiáveis e bem pensadas.</p>
               <div>
                 <div className='icons-container'>
-                <div className='icons-container_item' id='item-1'>
-                    <SiGo />
-                    <div>
-                      <p>Golang</p>
+                  {stacks.map((stack) => (
+                    <div className='icons-container_item' key={stack.name} style={{ color: stack.color }}>
+                      {stack.icon}
+                      <div>
+                        <p>{stack.name}</p>
+                      </div>
                     </div>
-                  </div>
-                  <div className='icons-container_item' id='item-2'>
-                    <SiTailwindcss />
-                    <div>
-                      <p>Tailwind</p>
-                    </div>
-                  </div>
-                  <div className='icons-container_item' id='item-3'>
-                    <SiTypescript />
-                    <div>
-                      <p>Typescript</p>
-                    </div>
-                  </div>
-                  <div className='icons-container_item' id='item-4'>
-                    <SiPostgresql />
-                    <div>
-                      <p>PostgreSQL</p>
-                    </div>
-                  </div>
-                  <div className='icons-container_item' id='item-5'>
-                    <FaNodeJs />
-                    <div>
-                      <p>Nodejs</p>
-                    </div>
-                  </div>
-                  <div className='icons-container_item' id='item-6'>
-                    <FaReact />
-                    <div>
-                      <p>React</p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>

@@ -1,10 +1,10 @@
 import { useState, useLayoutEffect } from "react";
 import "../styles/components/works.scss";
 import "animate.css";
-import { FaNodeJs, FaReact, FaSass } from "react-icons/fa";
+import { FaDocker, FaPython, FaReact, FaSass } from "react-icons/fa";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { SiPostgresql, SiSteam, SiTailwindcss } from "react-icons/si";
+import { SiJavascript } from "react-icons/si";
 
 const projects = [
   {
@@ -32,34 +32,30 @@ const projects = [
   },
   {
     id: 2,
-    title: "NycBlog",
+    title: "Roadkit",
     category: "Websites",
     image:
-      "https://github.com/nycholasmarques/portfolio-nycholas/blob/main/src/img/project-img/nycblog.png?raw=true",
-    year: "2024",
-    status: "Concluído",
+      "https://raw.githubusercontent.com/nycholasmarques/roadkit/main/docs/media/en/mapa-escuro.png",
+    year: "out 2026",
+    status: "Lançado",
     description:
-      "Aplicação criada com ReactJs e Nodejs, esse projeto tem como objetivo ser um blog com funções de login, cadastro, criar postagens, comentários, curtidas, também tem uma area de admin onde tem funções de adicionar e excluir postagens.",
+      "Roadmaps de estudo interativos definidos em arquivos JSON: mapa, kanban, progresso salvo e uma tela \"Hoje\" para organizar o dia, tudo em um app self-hosted. Uma alternativa leve ao roadmap.sh que roda com um único arquivo Python, sem dependências, ou via Docker.",
       stacks: [
         {
-          name: "ReactJs",
-          icon: <FaReact id="react-icon"/>,
+          name: "JavaScript",
+          icon: <SiJavascript id="js-icon"/>,
         },
         {
-          name: "Nodejs",
-          icon: <FaNodeJs id="node-icon"/>,
+          name: "Python",
+          icon: <FaPython id="python-icon"/>,
         },
         {
-          name: "Tailwind",
-          icon: <SiTailwindcss id="tailwind-icon"/>,
-        },
-        {
-          name: "PostgreSQL",
-          icon: <SiPostgresql id="postgres-icon"/>,
+          name: "Docker",
+          icon: <FaDocker id="docker-icon"/>,
         }
       ],
-    site: "",
-    github: "https://github.com/nycholasmarques/nycblog",
+    site: "https://nycholasmarques.github.io/roadkit/",
+    github: "https://github.com/nycholasmarques/roadkit",
   },
 ];
 
@@ -146,6 +142,9 @@ function Works() {
                   </figure>
                   <div className="project-detail">
                     <div className="first-line">
+                      <span className={`project-badge ${project.status === "Lançado" ? "project-badge--live" : ""}`}>
+                        {project.status} em {project.year}
+                      </span>
                       <h3 className="project-detail_title">{project.title}</h3>
                     </div>
                     <p className="project-detail_description">

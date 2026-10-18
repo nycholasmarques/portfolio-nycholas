@@ -7,24 +7,39 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 // os lados se alternam sozinhos.
 const timeline = [
   {
+    date: 'MAR 2017',
+    title: 'Antes do código',
+    description: 'Assistente administrativo no Banco do Brasil e, depois, atendimento na Teleperformance: anos que me ensinaram a entender problemas reais de pessoas.',
+  },
+  {
     date: 'SET 2023',
     title: 'Faculdade de ADS',
     description: 'Início da faculdade de Análise e Desenvolvimento de Sistemas na Uninter.',
   },
   {
     date: 'SET 2024',
-    title: 'Canal no YouTube',
+    title: 'Transição de carreira',
     description: (
       <>
-        Início do canal{' '}
+        Primeiros projetos como desenvolvedor backend e início do canal{' '}
         <a href="https://www.youtube.com/@DevNych" target="_blank" rel="noreferrer">DevNych</a>.
       </>
     ),
   },
   {
     date: 'JAN 2025',
-    title: 'Estágio',
-    description: 'Início do estágio em programação, atuando no backend.',
+    title: 'Estágio na Kumbuca',
+    description: 'Primeira experiência na área como estagiário, atuando no backend.',
+  },
+  {
+    date: 'SET 2025',
+    title: 'Engenheiro de Plataforma Jr. no Grupo SBF',
+    description: 'Automação, confiabilidade, GitOps e observabilidade com Kubernetes, ArgoCD, GCP e Go.',
+  },
+  {
+    date: 'MAR 2026',
+    title: 'Formado em ADS',
+    description: 'Conclusão do curso de Análise e Desenvolvimento de Sistemas na Uninter.',
   },
 ]
 

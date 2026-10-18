@@ -85,8 +85,9 @@
 
         .icons-container {
             display: flex;
+            flex-wrap: wrap;
             padding:  20px 20px;
-            gap: 20px;
+            gap: 14px 24px;
             align-items: center;
             justify-content: center;
             width: 100%;

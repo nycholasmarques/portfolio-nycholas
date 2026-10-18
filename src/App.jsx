@@ -32,10 +32,10 @@ function App() {
               Nycholas <span className="hero-highlight">Marques</span>
             </h1>
             <p className="hero-role" data-reveal style={{ '--reveal-delay': '0.16s' }}>
-              Desenvolvedor web
+              Engenheiro de Plataforma | SRE
             </p>
             <p className="hero-tagline" data-reveal style={{ '--reveal-delay': '0.24s' }}>
-              Construo aplicações web do backend ao frontend, com foco em código limpo e boas experiências.
+              Automatizo, observo e mantenho plataformas confiáveis com Kubernetes, GitOps e Go.
             </p>
 
             <div className="hero-actions" data-reveal style={{ '--reveal-delay': '0.32s' }}>
